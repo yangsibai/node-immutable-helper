@@ -1,8 +1,5 @@
-Immutable = require 'immutable'
 immutableHelper =
     getByPath: (obj, path)->
-        unless obj instanceof Immutable.Collection
-            throw new Error 'first argument should be a Immutable Collection'
         if not path or not path.trim()
             return obj
         roads = path.split('/')
@@ -12,8 +9,6 @@ immutableHelper =
         res
 
     setByPath: (obj, path, val)->
-        unless obj instanceof Immutable.Collection
-            throw new Error 'first argument should be a Immutable Collection'
         if not path or not path.trim()
             return obj
         while path
@@ -24,15 +19,11 @@ immutableHelper =
         val
 
     pushByPath: (obj, path, val)->
-        unless obj instanceof Immutable.Collection
-            throw new Error 'first argument should be a Immutable Collection'
         if not path or not path.trim()
             return obj
         this.setByPath obj, path, this.getByPath(obj, path).push(val)
 
     deleteByPath: (obj, path)->
-        unless obj instanceof Immutable.Collection
-            throw new Error 'first argument should be a Immutable Collection'
         if not path or not path.trim()
             return obj
         slashIndex = path.lastIndexOf '/'

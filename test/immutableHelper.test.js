@@ -12,7 +12,8 @@ describe('immutable helper test', function () {
     map = Immutable.Map({
         a: Immutable.Map({
             b: 1
-        })
+        }),
+        foo: Immutable.List([0])
     });
     list = Immutable.List([Immutable.List([0]), Immutable.List([1])]);
     describe('get by path test', function () {
@@ -80,13 +81,17 @@ describe('immutable helper test', function () {
         });
     });
     describe('push by path test', function () {
-        return it('push test', function () {
+        it('push test', function () {
             var res;
             res = immutableHelper.pushByPath(list, '0', 1);
             return assert(res.get(0).get(1), 1);
         });
+        it('push to list of map test', function () {
+            var res = immutableHelper.pushByPath(map, 'foo', '1');
+            assert.equal(res.get('foo').get(1), 1);
+        });
     });
-    return describe('delete by path test', function () {
+    describe('delete by path test', function () {
         return it('delete test', function () {
             var res;
             res = immutableHelper.deleteByPath(list, '1', 0);
