@@ -1,0 +1,23 @@
+{
+  "name": "immutable-helper",
+  "version": "0.0.1",
+  "description": "Immutable helper",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "immutable"
+  ],
+  "author": "massimo <yangsibai@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "immutable": "^3.7.6"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1"
+  }
+}
