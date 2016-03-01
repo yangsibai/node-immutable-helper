@@ -1,5 +1,4 @@
 Immutable = require 'immutable'
-
 immutableHelper =
     getByPath: (obj, path)->
         unless obj instanceof Immutable.Collection

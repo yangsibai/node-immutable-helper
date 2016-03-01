@@ -1,10 +1,11 @@
 {
   "name": "immutable-helper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Immutable helper",
   "main": "dist/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "prepublish": "gulp"
   },
   "keywords": [
     "immutable"
